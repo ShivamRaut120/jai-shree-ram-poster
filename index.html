@@ -11,17 +11,16 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#111;
     color:white;
     text-align:center;
 }
 
-/* HERO */
+/* Hero Section */
 
 .hero{
     background:url('pexels-kolkatarchobiwala-29508543.jpg') center center/cover no-repeat;
@@ -29,11 +28,24 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
 }
 
 .overlay{
-    background:rgba(0,0,0,0.55);
-    padding:30px;
+    position:relative;
+    z-index:2;
+    background:rgba(0,0,0,0.4);
+    padding:40px;
     border-radius:20px;
     backdrop-filter:blur(5px);
 }
@@ -54,15 +66,18 @@ h1{
     }
 }
 
-.hero-subtitle{
+.hero h2{
+    margin-top:15px;
+    font-size:28px;
+}
+
+.hero p{
     margin-top:15px;
     font-size:20px;
 }
 
-/* BUTTON */
-
 .music-btn{
-    margin-top:20px;
+    margin-top:25px;
     padding:12px 25px;
     border:none;
     border-radius:30px;
@@ -76,73 +91,21 @@ h1{
     background:#ff6600;
 }
 
-/* GALLERY */
-
-.gallery{
-    padding:60px 20px;
-    background:#1a1a1a;
-}
-
-.gallery h2{
-    color:#ffcc00;
-    margin-bottom:30px;
-}
-
-.gallery-img{
-    width:90%;
-    max-width:900px;
-    border-radius:20px;
-    box-shadow:0 0 25px orange;
-}
-
-/* RAM SECTION */
-
-.ram-section{
-    padding:60px 20px;
-    background:#111;
-}
-
-.ram-img{
-    width:450px;
-    max-width:95%;
-    border-radius:20px;
-    box-shadow:0 0 30px orange;
-    animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
-}
-
-.quote{
-    margin-top:25px;
-    font-size:32px;
-    color:#ffcc00;
-    font-weight:bold;
-}
-
-.quote2{
-    margin-top:15px;
-    font-size:22px;
-}
-
-/* ABOUT */
+/* About Section */
 
 .about{
-    padding:70px 20px;
+    padding:80px 20px;
     background:#181818;
 }
 
 .glass{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:20px;
-    padding:30px;
     max-width:900px;
     margin:auto;
+    padding:35px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
 }
 
 .about h2{
@@ -151,11 +114,18 @@ h1{
 }
 
 .about p{
-    line-height:1.8;
     font-size:20px;
+    line-height:1.8;
 }
 
-/* FOOTER */
+.quote{
+    margin-top:25px;
+    color:#ffcc00;
+    font-size:32px;
+    font-weight:bold;
+}
+
+/* Footer */
 
 footer{
     background:black;
@@ -163,7 +133,11 @@ footer{
     color:#ffcc00;
 }
 
-/* MOBILE */
+footer p{
+    margin-top:10px;
+}
+
+/* Mobile */
 
 @media(max-width:768px){
 
@@ -171,20 +145,20 @@ footer{
         font-size:40px;
     }
 
-    .hero-subtitle{
+    .hero h2{
+        font-size:20px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .about p{
         font-size:16px;
     }
 
     .quote{
         font-size:24px;
-    }
-
-    .quote2{
-        font-size:18px;
-    }
-
-    .about p{
-        font-size:17px;
     }
 }
 
@@ -192,8 +166,6 @@ footer{
 </head>
 
 <body>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -203,7 +175,7 @@ footer{
 
 <h2>॥ श्री राम जय राम जय जय राम ॥</h2>
 
-<p class="hero-subtitle">
+<p>
 Welcome to the Divine World of Lord Ram
 </p>
 
@@ -215,40 +187,6 @@ Welcome to the Divine World of Lord Ram
 
 </section>
 
-<!-- TEMPLE IMAGE -->
-
-<section class="gallery">
-
-<h2>🚩 Ram Mandir 🚩</h2>
-
-<img
-src="pexels-kolkatarchobiwala-29508543.jpg"
-alt="Ram Mandir"
-class="gallery-img">
-
-</section>
-
-<!-- LORD RAM -->
-
-<section class="ram-section">
-
-<img
-src="saurabh-solanki-MLTEUgMj7XY-unsplash.jpg"
-alt="Lord Ram"
-class="ram-img">
-
-<p class="quote">
-धर्मो रक्षति रक्षितः
-</p>
-
-<p class="quote2">
-🚩 जय श्री राम 🚩
-</p>
-
-</section>
-
-<!-- ABOUT -->
-
 <section class="about">
 
 <div class="glass">
@@ -259,29 +197,25 @@ class="ram-img">
 Lord Ram is the seventh avatar of Lord Vishnu and is revered as the embodiment of truth, righteousness, courage, devotion and compassion. His life inspires millions to walk on the path of Dharma.
 </p>
 
-<br>
+<p class="quote">
+धर्मो रक्षति रक्षितः
+</p>
 
-<p>
-"रामो विग्रहवान् धर्मः"
+<p style="margin-top:15px;">
+🚩 जय श्री राम 🚩
 </p>
 
 </div>
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
 
 <h3>🙏 Created by Shivam Raut 🙏</h3>
 
-<p style="margin-top:10px;">
-🚩 Jai Shree Ram 🚩
-</p>
+<p>🚩 Jai Shree Ram 🚩</p>
 
 </footer>
-
-<!-- AUDIO -->
 
 <audio id="bhajan">
 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
@@ -290,7 +224,7 @@ Lord Ram is the seventh avatar of Lord Vishnu and is revered as the embodiment o
 <script>
 
 function playMusic(){
-document.getElementById("bhajan").play();
+    document.getElementById("bhajan").play();
 }
 
 </script>
