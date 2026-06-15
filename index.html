@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +24,8 @@ body{
 /* HERO */
 
 .hero{
-    background:url('pexels-kolkatarchobiwala-29508543.jpg')
-    center center/cover no-repeat;
-    height:70vh;
+    background:url('pexels-kolkatarchobiwala-29508543.jpg') center center/cover no-repeat;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -87,33 +85,17 @@ h1{
 
 .gallery h2{
     color:#ffcc00;
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
-.slider{
+.gallery-img{
     width:90%;
-    max-width:700px;
-    margin:auto;
-}
-
-.slider img{
-    width:100%;
+    max-width:900px;
     border-radius:20px;
     box-shadow:0 0 25px orange;
-    transition:0.5s;
 }
 
-.slider img:hover{
-    transform:scale(1.03);
-}
-
-/* FLOATING RAM IMAGE */
-
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-12px);}
-    100%{transform:translateY(0);}
-}
+/* RAM SECTION */
 
 .ram-section{
     padding:60px 20px;
@@ -121,11 +103,17 @@ h1{
 }
 
 .ram-img{
-    width:500px;
+    width:450px;
     max-width:95%;
     border-radius:20px;
     box-shadow:0 0 30px orange;
     animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
 }
 
 .quote{
@@ -183,8 +171,16 @@ footer{
         font-size:40px;
     }
 
+    .hero-subtitle{
+        font-size:16px;
+    }
+
     .quote{
         font-size:24px;
+    }
+
+    .quote2{
+        font-size:18px;
     }
 
     .about p{
@@ -219,19 +215,16 @@ Welcome to the Divine World of Lord Ram
 
 </section>
 
-<!-- GALLERY -->
+<!-- TEMPLE IMAGE -->
 
 <section class="gallery">
 
-<h2>🚩 Ram Mandir Gallery 🚩</h2>
+<h2>🚩 Ram Mandir 🚩</h2>
 
-<div class="slider">
-
-<img id="sliderImage"
+<img
 src="pexels-kolkatarchobiwala-29508543.jpg"
-alt="Ram Mandir">
-
-</div>
+alt="Ram Mandir"
+class="gallery-img">
 
 </section>
 
@@ -263,10 +256,7 @@ class="ram-img">
 <h2>🚩 About Lord Ram 🚩</h2>
 
 <p>
-Lord Ram is the seventh avatar of Lord Vishnu and is
-revered as the embodiment of truth, righteousness,
-courage, devotion and compassion.
-His life inspires millions to walk on the path of Dharma.
+Lord Ram is the seventh avatar of Lord Vishnu and is revered as the embodiment of truth, righteousness, courage, devotion and compassion. His life inspires millions to walk on the path of Dharma.
 </p>
 
 <br>
@@ -299,25 +289,6 @@ His life inspires millions to walk on the path of Dharma.
 
 <script>
 
-const images = [
-"pexels-kolkatarchobiwala-29508543.jpg",
-"saurabh-solanki-MLTEUgMj7XY-unsplash.jpg"
-];
-
-let current = 0;
-
-setInterval(() => {
-
-current++;
-
-if(current >= images.length){
-current = 0;
-}
-
-document.getElementById("sliderImage").src = images[current];
-
-}, 3000);
-
 function playMusic(){
 document.getElementById("bhajan").play();
 }
@@ -326,4 +297,3 @@ document.getElementById("bhajan").play();
 
 </body>
 </html>
-```
