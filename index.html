@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jai Shree Ram</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9933,#ff6600);
+    font-family:Arial, sans-serif;
+    text-align:center;
+    overflow:hidden;
+}
+
+.container{
+    color:white;
+}
+
+h1{
+    font-size:80px;
+    text-shadow:0 0 20px yellow;
+    animation:glow 2s infinite alternate;
+}
+
+h2{
+    margin-top:15px;
+    font-size:32px;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px yellow;
+    }
+    to{
+        text-shadow:0 0 30px yellow,
+                    0 0 50px orange;
+    }
+}
+
+.flag{
+    font-size:50px;
+    animation:wave 1.5s infinite;
+}
+
+@keyframes wave{
+    0%{transform:rotate(0deg);}
+    25%{transform:rotate(10deg);}
+    50%{transform:rotate(0deg);}
+    75%{transform:rotate(-10deg);}
+    100%{transform:rotate(0deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="flag">🚩</div>
+
+    <h1>JAI SHREE RAM</h1>
+
+    <h2>॥ श्री राम जय राम जय जय राम ॥</h2>
+
+    <div class="flag">🚩</div>
+</div>
+
+</body>
+</html>
