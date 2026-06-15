@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +22,12 @@ body{
     text-align:center;
 }
 
-/* Hero Section */
+/* HERO */
 
 .hero{
     background:url('pexels-kolkatarchobiwala-29508543.jpg')
     center center/cover no-repeat;
-    min-height:100vh;
+    height:70vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -36,7 +37,7 @@ body{
     background:rgba(0,0,0,0.55);
     padding:30px;
     border-radius:20px;
-    backdrop-filter:blur(4px);
+    backdrop-filter:blur(5px);
 }
 
 h1{
@@ -55,12 +56,12 @@ h1{
     }
 }
 
-h2{
+.hero-subtitle{
     margin-top:15px;
-    color:white;
+    font-size:20px;
 }
 
-/* Music Button */
+/* BUTTON */
 
 .music-btn{
     margin-top:20px;
@@ -77,7 +78,7 @@ h2{
     background:#ff6600;
 }
 
-/* Gallery */
+/* GALLERY */
 
 .gallery{
     padding:60px 20px;
@@ -86,7 +87,7 @@ h2{
 
 .gallery h2{
     color:#ffcc00;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .slider{
@@ -106,7 +107,13 @@ h2{
     transform:scale(1.03);
 }
 
-/* Ram Section */
+/* FLOATING RAM IMAGE */
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
+}
 
 .ram-section{
     padding:60px 20px;
@@ -117,7 +124,8 @@ h2{
     width:500px;
     max-width:95%;
     border-radius:20px;
-    box-shadow:0 0 25px orange;
+    box-shadow:0 0 30px orange;
+    animation:float 3s ease-in-out infinite;
 }
 
 .quote{
@@ -130,18 +138,44 @@ h2{
 .quote2{
     margin-top:15px;
     font-size:22px;
-    color:white;
 }
 
-/* Footer */
+/* ABOUT */
+
+.about{
+    padding:70px 20px;
+    background:#181818;
+}
+
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:20px;
+    padding:30px;
+    max-width:900px;
+    margin:auto;
+}
+
+.about h2{
+    color:#ffcc00;
+    margin-bottom:20px;
+}
+
+.about p{
+    line-height:1.8;
+    font-size:20px;
+}
+
+/* FOOTER */
 
 footer{
-    padding:25px;
     background:black;
+    padding:25px;
     color:#ffcc00;
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -153,10 +187,9 @@ footer{
         font-size:24px;
     }
 
-    .quote2{
-        font-size:18px;
+    .about p{
+        font-size:17px;
     }
-
 }
 
 </style>
@@ -174,8 +207,12 @@ footer{
 
 <h2>॥ श्री राम जय राम जय जय राम ॥</h2>
 
+<p class="hero-subtitle">
+Welcome to the Divine World of Lord Ram
+</p>
+
 <button class="music-btn" onclick="playMusic()">
-🎵 Play Bhajan
+🎵 Play Music
 </button>
 
 </div>
@@ -191,7 +228,8 @@ footer{
 <div class="slider">
 
 <img id="sliderImage"
-src="pexels-kolkatarchobiwala-29508543.jpg">
+src="pexels-kolkatarchobiwala-29508543.jpg"
+alt="Ram Mandir">
 
 </div>
 
@@ -203,8 +241,8 @@ src="pexels-kolkatarchobiwala-29508543.jpg">
 
 <img
 src="saurabh-solanki-MLTEUgMj7XY-unsplash.jpg"
-class="ram-img"
-alt="Lord Ram">
+alt="Lord Ram"
+class="ram-img">
 
 <p class="quote">
 धर्मो रक्षति रक्षितः
@@ -216,15 +254,44 @@ alt="Lord Ram">
 
 </section>
 
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="glass">
+
+<h2>🚩 About Lord Ram 🚩</h2>
+
+<p>
+Lord Ram is the seventh avatar of Lord Vishnu and is
+revered as the embodiment of truth, righteousness,
+courage, devotion and compassion.
+His life inspires millions to walk on the path of Dharma.
+</p>
+
+<br>
+
+<p>
+"रामो विग्रहवान् धर्मः"
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
 
-<h3>
-🙏 Created with Devotion to Lord Ram 🙏
-</h3>
+<h3>🙏 Created by Shivam Raut 🙏</h3>
+
+<p style="margin-top:10px;">
+🚩 Jai Shree Ram 🚩
+</p>
 
 </footer>
 
-<!-- Audio -->
+<!-- AUDIO -->
 
 <audio id="bhajan">
 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
@@ -232,14 +299,9 @@ alt="Lord Ram">
 
 <script>
 
-/* Image Slider */
-
 const images = [
-
 "pexels-kolkatarchobiwala-29508543.jpg",
-
 "saurabh-solanki-MLTEUgMj7XY-unsplash.jpg"
-
 ];
 
 let current = 0;
@@ -254,17 +316,14 @@ current = 0;
 
 document.getElementById("sliderImage").src = images[current];
 
-},3000);
-
-/* Music */
+}, 3000);
 
 function playMusic(){
-
 document.getElementById("bhajan").play();
-
 }
 
 </script>
 
 </body>
 </html>
+```
